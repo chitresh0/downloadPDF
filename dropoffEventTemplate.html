@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<style>
+			.header {
+				text-align: center;
+				color: rgb(20, 100, 200);
+			}
+
+			h4	{color:rgb(20, 100, 200);}
+			.line {
+				height: 1px;
+				border-width: 0;
+				background-color:rgb(20, 100, 200)
+			}
+		</style>
+
+		<img id="logo" alt="{{message}}" src="data:image/jpeg;base64,{{logo}}">
+
+		<h3 class="header">
+			DropOff Details for Vehicle with VIN # {{payload.vin}} (VIN)
+		</h3>
+	</head>
+	<body class="body">
+		<h5>DropOff Date - {{payload.registrationDate}}</h5>
+
+		<h5>DropOff Remarks - {{payload.eventMessage}}</h5>
+
+		<br>
+		<hr class="line">
+		
+		<h4>Drop Off Location</h4>
+		<h5>Building Number - {{payload.address.buildingNumber}}</h5>
+		<h5>Floor - {{payload.address.floor}}</h5>
+		<h5>Street Number - {{payload.address.streetNumber}}</h5>
+		<h5>StreetName - {{payload.address.streetName}}</h5>
+		<h5>townName - {{payload.address.townName}}</h5>
+		<h5>State - {{payload.address.countrySubDivision}}</h5>
+		<h5>postcode - {{payload.address.postCode}}</h5>
+		<h5>Country - {{payload.address.country}}</h5>
+
+		<hr class="line">
+
+		<br>
+
+		<h5>Transporting Company - {{payload.transportCompanyId}}</h5>
+		<h5>Party at Drop Off Location - {{payload.address.nameOfBusinessPartyAtAddress}}</h5>
+
+		<script type="module">
+				// var fs = require('fs');
+				// var local_src = "data:image/jpeg;base64," + readFileSync('image.png').toString('base64');
+				console.log('inside script');
+				var mystring = 'hello';
+				// document.getElementById("logo").src = "image.png";
+		</script>
+	</body>
+
+</html>
